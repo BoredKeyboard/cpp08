@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/07 17:33:36 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/07/07 17:55:17 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/07/07 18:09:43 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int	main(void) {
 	catch (std::exception &a) {
 		std::cout << a.what() << std::endl;
 	}
-
-	
+	return (EXIT_SUCCESS);
 }

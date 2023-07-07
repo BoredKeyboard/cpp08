@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/07 17:05:26 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/07/07 17:54:33 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/07/07 18:10:15 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,21 @@ void	Span::addNumber(int n) {
 
 int	Span::shortestSpan(void) {
 	if (this->_current <= 1) {
-		throw ; // no stack can be found
+		throw std::range_error("Not enough numbers for a span");
 	}
 	std::sort(this->_array.begin(), this->_array.end());
-	// return kortste
+	int	shortest = this->_array[1] - this->_array[0];
+	for (unsigned int i = 1; i < this->_N - 1; i++) {
+		int next = (this->_array[i + 1] - this->_array[i]);
+		if (next < shortest)
+			shortest = next;
+	}
+	return (shortest);
 }
 
 int	Span::longestSpan(void) {
 	if (this->_current <= 1) {
-		throw ; // no stack can be found
+		throw std::range_error("Not enough numbers for a span");
 	}
 	std::sort(this->_array.begin(), this->_array.end());
 	return (((*this->_array.end() - 1)) - (*this->_array.begin()));
