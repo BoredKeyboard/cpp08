@@ -6,7 +6,7 @@
 /*   By: mforstho <mforstho@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/07 17:05:26 by mforstho      #+#    #+#                 */
-/*   Updated: 2023/07/07 18:10:15 by mforstho      ########   odam.nl         */
+/*   Updated: 2023/07/25 10:59:04 by mforstho      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ int	Span::longestSpan(void) {
 		throw std::range_error("Not enough numbers for a span");
 	}
 	std::sort(this->_array.begin(), this->_array.end());
-	return (((*this->_array.end() - 1)) - (*this->_array.begin()));
+	return ((*--this->_array.end()) - (*this->_array.begin()));
 }
